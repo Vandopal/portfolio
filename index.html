@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.header');
+
+            if (window.scrollY > 72) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        function downloadResume() {
+
+            const blob = new Blob(['bonjour'], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+    </script>
+
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo__block-img">
+                    <img src="resources/img/header/code.png" alt="code">
+                </div>
+                <h5>Dev Portfolio</h5>
+            </div>
+
+            <nav class="navigation">
+                <ul class="lists">
+                    <li class="list-item"><a href="#skills" class="blue">Навыки</a></li>
+                    <li class="list-item"><a href="#experience" class="blue">Опыт</a></li>
+                    <li class="list-item"><a href="#contacts" class="blue">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <button class="btn-1" onclick="downloadResume()">
+                <div class="resume-btn">
+                    <img src="resources/img/header/docs.png" alt="docs">
+                    <p>Резюме</p>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="bage-1">
+                <img src="resources/img/main/stars.png" alt="twinkle">
+                <p>Открыт к предложениям</p>
+            </div>
+            <h1>Full-stack Developer</h1>
+            <h3>Начинающий программист с сильным желанием к <br> созданию современных веб-приложений</h3>
+            <div class="bages">
+                <div class="bage-item border">Javascript</div>
+                <div class="bage-item border">React</div>
+                <div class="bage-item border">Node.js</div>
+                <div class="bage-item border">PostgreSQL</div>
+            </div>
+
+            <span class="info"><a href="#skills" class="blue">Узнать больше</a></span>
+        </div>
+    </main>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section__title">
+                <h2>Технические навыки</h2>
+                <p class="blue">Мой технологический стек и инструменты, которыми я владею</p>
+            </div>
+
+            <div class="cards-container">
+                <div class="card-item card-border">
+                    <div class="main-text">
+                        <div class="white-block">
+                            <img src="resources/img/stack/frontend.png" alt="frontend">
+                        </div>
+                        <h5>Frontend</h5>
+                    </div>
+                    <div class="cards__bages">
+                        <span class="skill__bage bage-2 skills-bg">HTML5</span>
+                        <span class="skill__bage bage-2 skills-bg">CSS</span>
+                        <span class="skill__bage bage-2 skills-bg">Javascript</span>
+                        <span class="skill__bage bage-2 skills-bg">React</span>
+                        <span class="skill__bage bage-2 skills-bg">Верстка по макетам</span>
+                    </div>
+                </div>
+                <div class="card-item card-border">
+                    <div class="main-text">
+                        <div class="white-block">
+                            <img src="resources/img/stack/backend.png" alt="backend">
+                        </div>
+                        <h5>Backend</h5>
+                    </div>
+                    <div class="cards__bages">
+                        <span class="skill__bage bage-2 skills-bg">Node.js</span>
+                        <span class="skill__bage bage-2 skills-bg">Express</span>
+                        <span class="skill__bage bage-2 skills-bg">Fastify</span>
+                        <span class="skill__bage bage-2 skills-bg">REST API</span>
+                    </div>
+                </div>
+                <div class="card-item card-border">
+                    <div class="main-text">
+                        <div class="white-block">
+                            <img src="resources/img/stack/db.png" alt="db">
+                        </div>
+                        <h5>База данных</h5>
+                    </div>
+                    <div class="cards__bages">
+                        <span class="skill__bage bage-2 skills-bg">PostgreSQL</span>
+                        <span class="skill__bage bage-2 skills-bg">MongoDB</span>
+                    </div>
+                </div>
+                <div class="card-item card-border">
+                    <div class="main-text">
+                        <div class="white-block">
+                            <img src="resources/img/stack/tools.png" alt="tools">
+                        </div>
+                        <h5>Инструменты</h5>
+                    </div>
+                    <div class="cards__bages">
+                        <span class="skill__bage bage-2 skills-bg">Axios</span>
+                        <span class="skill__bage bage-2 skills-bg">Git</span>
+                    </div>
+                </div>
+                <div class="card-item card-border">
+                    <div class="main-text">
+                        <div class="white-block">
+                            <img src="resources/img/stack/tests.png" alt="test">
+                        </div>
+                        <h5>Тестирование</h5>
+                    </div>
+                    <div class="cards__bages">
+                        <span class="skill__bage bage-2 skills-bg">Jest</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section__title">
+                <h2>Опыт работы</h2>
+
+                <p class="blue">Проекты и стажировки, в которых я принимал участие</p>
+            </div>
+            <div class="experience-cards">
+                <div class="experience-card">
+                    <div class="card__header">
+                        <div class="white-block">
+                            <img src="resources/img/exp/com.png" alt="com" id="exp">
+                        </div>
+                        <div class="header-text">
+                            <h4>Коммерческая стажировка</h4>
+                            <p>Участвовал в разработке коммерческих проектов, получил опыт работы в команде и изучил
+                                профессиональные стандарты разработки.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cards__bages">
+                        <span class="skill__bage bage-2 skills-bg">Full-Stack</span>
+                        <span class="skill__bage bage-2 skills-bg">Командная разработка</span>
+                        <span class="skill__bage bage-2 skills-bg">Agile</span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="card__header">
+                        <div class="white-block">
+                            <img src="resources/img/exp/diplom.png" alt="diplom" id="exp">
+                        </div>
+                        <div class="header-text">
+                            <h4>Дипломный проект</h4>
+                            <p>Разработка дипломного проекта с применением современных технологий и практик
+                                программирования.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cards__bages">
+                        <span class="skill__bage bage-2 skills-bg">React</span>
+                        <span class="skill__bage bage-2 skills-bg">Node.js</span>
+                        <span class="skill__bage bage-2 skills-bg">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="card__header">
+                        <div class="white-block">
+                            <img src="resources/img/exp/game.png" alt="game" id="exp">
+                        </div>
+                        <div class="header-text">
+                            <h4>Разработка игры</h4>
+                            <p>Работал в команде над созданием игры, отвечал за реализацию игровой логики и интерфейса.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cards__bages">
+                        <span class="skill__bage bage-2 skills-bg">Javascript</span>
+                        <span class="skill__bage bage-2 skills-bg">Командная работа</span>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <div class="card__header">
+                        <div class="white-block">
+                            <img src="resources/img/exp/projects.png" alt="projects" id="exp">
+                        </div>
+                        <div class="header-text">
+                            <h4>Учебные проекты</h4>
+                            <p>Участвовал в нескольких учебных проектах от колледжа с фокусом на Full-Stack разработку.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cards__bages">
+                        <span class="skill__bage bage-2 skills-bg">Full-stack</span>
+                        <span class="skill__bage bage-2 skills-bg">Rest API</span>
+                        <span class="skill__bage bage-2 skills-bg">Тестирование</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <div class="section__title">
+                <h2>Свяжитесь со мной</h2>
+                <p class="blue">Открыт для новых возможностей и интересных проектов</p>
+            </div>
+            <div class="contacts-container">
+                <div class="contacts-cards">
+                    <button class="contact-card">
+                        <div class="circle white-cirle">
+                            <img src="resources/img/contacts/telegram.png" alt="">
+                        </div>
+                        <div class="contact-text">
+                            <p>Telegram</p>
+                            <p>@aezakry</p>
+                        </div>
+                    </button>
+                    <button class="contact-card">
+                        <div class="circle gray-circle">
+                            <img src="resources/img/contacts/discord.png" alt="">
+                        </div>
+                        <div class="contact-text">
+                            <p>Discord</p>
+                            <p>@horoshyparen`</p>
+                        </div>
+                    </button>
+                    <button class="contact-card">
+                        <div class="circle gray-plus-circle">
+                            <img src="resources/img/contacts/email.png" alt="">
+                        </div>
+                        <div class="contact-text">
+                            <p>Email</p>
+                            <p>rdlo8679@gmail.com</p>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="contact-send">
+                    <p>Готов обсудить ваш проект или возможность сотрудничества</p>
+                    <button class="send-btn">
+                        <a href="https://t.me/aezakry">
+                            <img src="resources/img/contacts/telegram.png" alt="telegram" class="png-send">
+                            Написать в Telegram
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025. Все права защищены.</p>
+    </footer>
+
+</body>
+
+</html>
