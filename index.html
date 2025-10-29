@@ -21,19 +21,6 @@
             }
         });
 
-        function downloadResume() {
-
-            const blob = new Blob(['bonjour'], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
-
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'resume.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
-        }
 
     </script>
 
@@ -54,11 +41,11 @@
                 </ul>
             </nav>
 
-            <button class="btn-1" onclick="downloadResume()">
-                <div class="resume-btn">
+            <button class="btn-1">
+                <a class="resume-btn" href="./resources/resume/profile.pdf" download="resume.pdf">
                     <img src="resources/img/header/docs.png" alt="docs">
                     <p>Резюме</p>
-                </div>
+                </a>
             </button>
         </div>
     </header>
