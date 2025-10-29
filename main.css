@@ -183,11 +183,11 @@ p {
     width: 108px;
     height: 36px;
     padding: 8px 12px;
-    border-radius: 8px;
     border: none;
 }
 
 .btn-1 {
+    border-radius: 8px;
     border: none;
 }
 
